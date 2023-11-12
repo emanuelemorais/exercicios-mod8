@@ -1,0 +1,4 @@
+Invoking command in '/home/manu/Projects/exercicios-mod8/ponderada2/build/turtlesim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/manu/Projects/exercicios-mod8/ponderada2/build/turtlesim -- -j8 -l8
+Invoked command in '/home/manu/Projects/exercicios-mod8/ponderada2/build/turtlesim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/manu/Projects/exercicios-mod8/ponderada2/build/turtlesim -- -j8 -l8
+Invoking command in '/home/manu/Projects/exercicios-mod8/ponderada2/build/turtlesim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/manu/Projects/exercicios-mod8/ponderada2/build/turtlesim
+Invoked command in '/home/manu/Projects/exercicios-mod8/ponderada2/build/turtlesim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/manu/Projects/exercicios-mod8/ponderada2/build/turtlesim
