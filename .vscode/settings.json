@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "ponderada2"
+        "ponderada2",
+        "ponderada3"
     ]
 }
