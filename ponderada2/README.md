@@ -62,4 +62,5 @@ Após a realização desses passos o Gazebo, RVIZ e um terminal executando o scr
 > O código feito está utilizando um mapa salvo na raiz do projeto, nomeado de `gazebo.yaml` e `gazebo.pgm`.  Caso queira mudar o path ou o mapa que será utilizado é necessário acessar o arquivo no diretório `exercicios-mod8/ponderada2/src/navegacao/launch/nav_launch.py` e na linha 19 mudar o path/mapa utilizado. 
 
 #### Video do mapeamento
-Neste [link](https://drive.google.com/file/d/10xD0X_FvuaA83I4ABn1IIk23XQBS-Bbf/view) é possível ver o funcionamento do pacote.
+Neste [link](https://drive.google.com/file/d/10xD0X_FvuaA83I4ABn1IIk23XQBS-Bbf/view) é possível ver o funcionamento do pacote. 
+Fiz um segundo video com obstaculos adicionais não mapeados, para acessar é só clicar no [link](https://drive.google.com/file/d/1l1K5YvmTlQGu7FK_FJT_COUqrO5N6tom/view?usp=sharing)
