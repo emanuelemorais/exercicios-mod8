@@ -1,7 +1,7 @@
 # Ponderada 4 - Módulo 8
 ## Emanuele Lacerda Morais Martins
 
-### Como instalar e rodar o sistema criado
+## Como instalar e rodar o sistema criado
 
 1. Clone este repositório:
 ```
@@ -34,6 +34,6 @@ python3 app.py
 
 Isso irá começar o código, para acessar a interface abra no navegador `http://127.0.0.1:7860/`
 
-### Video do funcionamento completo
+## Video do funcionamento completo
 
 Segue o [link](https://drive.google.com/file/d/1VmPaI0BbFzB-7zyRHd7MsVdiIkCRVXja/view?usp=sharing) do vídeo.
