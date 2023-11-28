@@ -46,11 +46,17 @@ def main():
             
             # Instância da classe que faz as respresentações vetoriais do texto
             embedding_function = OpenAIEmbeddings()
-
+            
+            # Cria vetor de documentos
             vectordb = Chroma.from_documents(documents=docs, embedding=embedding_function)
-            retriever = vectordb.as_retriever()
 
+            # Converte um vetor de documentos em um objeto retriever
+            retriever = vectordb.as_retriever()
+            
+            #Instância do modelo 
             llm = ChatOpenAI(model_name='gpt-3.5-turbo')
+
+            # omponente que combina um modelo de linguagem com um sistema de recuperação de documentos para realizar a tarefa de Question Answering.
             qa = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
 
             response = qa({"query": question})
