@@ -34,3 +34,7 @@ Isso irá começar o código, para acessar a interface abra no navegador `http:/
 ## Video do funcionamento completo
 
 Segue o [link](https://www.loom.com/share/afca5833ea3341b5811e87dafeba3b9c) do vídeo.
+
+## Interface com streamit
+
+![WhatsApp Image 2023-11-28 at 15 54 26](https://github.com/emanuelemorais/exercicios-mod8/assets/99221221/3afc826c-01f7-4188-bc29-f1a97af46530)
