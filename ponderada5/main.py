@@ -10,59 +10,59 @@ from langchain.prompts.chat import (ChatPromptTemplate, HumanMessagePromptTempla
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import Chroma
 
-load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
-system_template = """Use the following pieces of context to answer the users question.
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
-"""
-
-messages = [
-    SystemMessagePromptTemplate.from_template(system_template),
-    HumanMessagePromptTemplate.from_template("{question}"),
-]
-
-prompt = ChatPromptTemplate.from_messages(messages)
-chain_type_kwargs = {"prompt": prompt}
-
 
 def main():
 
-    st.title('Chat da Manu :)')
+    load_dotenv()
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-    url = st.text_input("Insert the website URL")
+    system_template = """Use the following pieces of context to answer the users question.
+    If you don't know the answer, just say that you don't know, don't try to make up an answer.
+    """
 
-    prompt = st.text_input("Ask a question")
+    messages = [
+        SystemMessagePromptTemplate.from_template(system_template),
+        HumanMessagePromptTemplate.from_template("{question}"),
+    ]
 
-    if st.button("Submit Query", type="primary"):
+    prompt = ChatPromptTemplate.from_messages(messages)
+    chain_type_kwargs = {"prompt": prompt}
 
-        loader = WebBaseLoader(url) 
-        data = loader.load()
+    # Interface streamlit
+    st.title('Chatbot da Manu :)')
+    url = st.text_input("Insert the URL:")
+    question = st.text_input("Ask a question:")
 
-        # Divide em chunks
-        text_splitter = CharacterTextSplitter( chunk_size=500, chunk_overlap=40)
-        docs = text_splitter.split_documents(data)
-        
-        # Instância da classe que faz as respresentações vetoriais do texto
-        embedding_function = OpenAIEmbeddings()
+    if st.button("Submit", type="primary"):
 
-        vectordb = Chroma.from_documents(documents=docs, embedding=embedding_function)
+         with st.spinner("Loading..."):
 
-        retriever = vectordb.as_retriever()
+            loader = WebBaseLoader(url) 
+            data = loader.load()
 
-        llm = ChatOpenAI(model_name='gpt-3.5-turbo')
+            # Divide em chunks
+            text_splitter = CharacterTextSplitter( chunk_size=500, chunk_overlap=40)
+            docs = text_splitter.split_documents(data)
+            
+            # Instância da classe que faz as respresentações vetoriais do texto
+            embedding_function = OpenAIEmbeddings()
 
-        qa = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
+            vectordb = Chroma.from_documents(documents=docs, embedding=embedding_function)
+            retriever = vectordb.as_retriever()
 
-        response = qa(prompt)
+            llm = ChatOpenAI(model_name='gpt-3.5-turbo')
+            qa = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
 
-        st.subheader('Resposta:')
-        output_container = st.empty()
-        
-        words = response['result'].split()
-        for i in range(len(words)):
-            output_container.write(" ".join(words[:i+1]))
-            time.sleep(0.1) 
+            response = qa({"query": question})
+            print(response)
+            
+            st.subheader('Answer:')
+            output_container = st.empty()
+            
+            words = response['result'].split()
+            for i in range(len(words)):
+                output_container.write(" ".join(words[:i+1]))
+                time.sleep(0.1) 
 
 if __name__ == '__main__':
     main()
