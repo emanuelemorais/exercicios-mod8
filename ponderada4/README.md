@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```
 6. Por fim, no mesmo diretório (exercicios-mod8/ponderada4) rode o seguinte comando:
 ```
-python3 app.py
+python3 main.py
 ```
 
 Isso irá começar o código, para acessar a interface abra no navegador `http://127.0.0.1:7860/`
