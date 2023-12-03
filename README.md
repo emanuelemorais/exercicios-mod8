@@ -4,3 +4,4 @@
 - Ponderada 3 (16/11/23): https://github.com/emanuelemorais/exercicios-mod8/tree/main/ponderada3
 - Ponderada 4 (24/11/23): https://github.com/emanuelemorais/exercicios-mod8/tree/main/ponderada4
 - Ponderada 5 (28/11/23): https://github.com/emanuelemorais/exercicios-mod8/tree/main/ponderada5
+- Ponderada 6 (03/12/23): https://github.com/emanuelemorais/exercicios-mod8/tree/main/ponderada6
