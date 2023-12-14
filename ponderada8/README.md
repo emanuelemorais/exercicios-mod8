@@ -17,6 +17,10 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+4. Crie um arquivo .env e adicione uma chave de API da OpenAI:
+```
+OPENAI_API_KEY=<sua-chave-de-api>
+```
 4. Rode o arquivo `cria_audio.py` para criar ou editar o audio usado como base. Na linha 26 desse arquivo é possível trocar o texto do audio base.
 ```
 python3 cria_audio.py
