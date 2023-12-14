@@ -19,6 +19,7 @@ def criar_arquivo_de_fala(modelo="tts-1", voz="alloy", entrada=None, nome_arquiv
         input=entrada
     )
 
+    print("Audio criado com sucesso!")
     response.stream_to_file(speech_file_path)
 
 if __name__ == "__main__":
